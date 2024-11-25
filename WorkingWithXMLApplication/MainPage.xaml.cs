@@ -81,6 +81,8 @@ namespace WorkingWithXMLApplication
             ParsingOptions.IsVisible = isVisible;
             OpenScheduleButton.IsVisible = isVisible;
             HTMLTransorm.IsVisible = isVisible;
+            // new update
+            ClearFilters.IsVisible = isVisible;
         }
 
         private static void PopulatePicker(Picker picker, IEnumerable<string?> items)
@@ -137,12 +139,12 @@ namespace WorkingWithXMLApplication
 
         private async void OnHTMLTransformButtonClicked(object sender, EventArgs e)
         {
-            await HandleFileSelectionAsync(".xsl", "Оберіть XSL файл", async xslFilePath =>
+            await HandleFileSelectionAsync(".xsl", "Select XSL файл", async xslFilePath =>
             {
                 try
                 {
                     if (_selectedFilePath == null)
-                        throw new InvalidOperationException("Файл не вибрано");
+                        throw new InvalidOperationException("File not chosen");
 
                     using var stream = new MemoryStream();
                     var xsl = new XslCompiledTransform();
@@ -158,7 +160,7 @@ namespace WorkingWithXMLApplication
                     var saveResult = await FileSaver.Default.SaveAsync("TransformedResult.html", stream);
                     saveResult.EnsureSuccess();
 
-                    await Toast.Make("HTML файл збережено!").Show();
+                    await Toast.Make("HTML file wasn't saved!").Show();
                 }
                 catch (Exception ex)
                 {

@@ -102,17 +102,6 @@
                             <Label Text="Day" FontSize="18" TextColor="#374785"/>
                             <Picker x:Name="DayPicker" BackgroundColor="White" VerticalOptions="FillAndExpand" TextColor="#374785"/>
                         </StackLayout>
-
-                        <StackLayout Grid.Row="0" Grid.Column="2">
-                            <Label Text=" " />
-                            <Button x:Name="ClearFilters" 
-                                    Text="Clear Filters" 
-                                    Clicked="OnClearFiltersButtonClicked" 
-                                    VerticalOptions="FillAndExpand"
-                                    BackgroundColor="#FF6F61" 
-                                    TextColor="White"
-                                    CornerRadius="8"/>
-                        </StackLayout>
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
@@ -138,6 +127,15 @@
                         TextColor="White"
                         FontSize="18"
                         CornerRadius="10"
+                        IsVisible="False"/>
+                
+                <Button x:Name="ClearFilters" 
+                        Text="Clear Filters" 
+                        Clicked="OnClearFiltersButtonClicked" 
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="#FF6F61" 
+                        TextColor="White"
+                        CornerRadius="8"
                         IsVisible="False"/>
             </HorizontalStackLayout>
         </StackLayout>
