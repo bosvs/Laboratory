@@ -13,7 +13,8 @@ namespace WorkingWithXMLApplication{
         public string Title { get; set; }
         public Student Student { get; set; }
         public string Room { get; set; }
-        //public List<Student> Students { get; set; }
+        public string Difficulty { get; set; }
+  
         public string ScheduleTime
         {
             get => _scheduleTime;

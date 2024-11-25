@@ -13,6 +13,7 @@ namespace WorkingWithXMLApplication.ParsingStrategy
             {
                 var Event = new Event
                 {
+                    Difficulty = (string)EventElement.Attribute("Difficulty"),
                     Day = (string)EventElement.Attribute("Day"),
                     Title = (string)EventElement.Attribute("Title"),
                     Room = (string)EventElement.Attribute("Room"),
@@ -22,12 +23,7 @@ namespace WorkingWithXMLApplication.ParsingStrategy
                         FullName = (string)EventElement.Element("Student")?.Element("FullName"),
                         Faculty = (string)EventElement.Element("Student")?.Attribute("Faculty"),
                         Department = (string)EventElement.Element("Student")?.Attribute("Department")
-                    },
-                    //Students = EventElement.Descendants("Student").Select(s => new Student
-                    //{
-                    //    FullName = (string)s.Element("FullName"),
-                    //    Group = (string)s.Attribute("Group")
-                    //}).ToList()
+                    }
                 };
                 schedule.Events.Add(Event);
             }

@@ -65,6 +65,7 @@ namespace WorkingWithXMLApplication
 
                 PopulatePicker(DayPicker, GetUniqueValues(filePath, "Event", "Day"));
                 PopulatePicker(RoomPicker, GetUniqueValues(filePath, "Event", "Room"));
+                PopulatePicker(DifficultyPicker, GetUniqueValues(filePath, "Event", "Difficulty"));
 
 #if WINDOWS
                 Application.Current.Windows[0].Width = 750;
@@ -96,6 +97,7 @@ namespace WorkingWithXMLApplication
             EventNameFilter.Text = string.Empty;
             StudentNameFilter.Text = string.Empty;
             TimeFilter.Time = TimeSpan.Zero;
+            DifficultyPicker.SelectedIndex = -1;
             DayPicker.SelectedIndex = -1;
             RoomPicker.SelectedIndex = -1;
         }
@@ -128,6 +130,7 @@ namespace WorkingWithXMLApplication
                 StudentNameFilter.Text,
                 TimeFilter.Time == TimeSpan.Zero ? null : TimeFilter.Time.ToString(),
                 EventNameFilter.Text,
+                DifficultyPicker.SelectedItem as string,
                 RoomPicker.SelectedItem as string,
                 DayPicker.SelectedItem as string);
 

@@ -28,6 +28,7 @@ namespace WorkingWithXMLApplication.ParsingStrategy
 
             var Event = new Event
             {
+                Difficulty = EventNode.Attributes["Difficulty"]?.Value.Trim(),
                 Day = EventNode.Attributes["Day"]?.Value.Trim(),
                 Title = EventNode.Attributes["Title"]?.Value.Trim(),
                 Room = EventNode.Attributes["Room"]?.Value.Trim(),

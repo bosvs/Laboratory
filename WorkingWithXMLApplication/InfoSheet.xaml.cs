@@ -13,14 +13,15 @@ public partial class InfoSheet : ContentPage
         string? time = null, 
         string? EventTitle = null, 
         string? room = null,
-        string? day = null)
+        string? day = null,
+        string? difficulty = null)
     {
 
         InitializeComponent();
 
         var result = ScheduleFilter.FilterSchedule(parsingStrategy.Parse(SelectedFilePath),
             StudentName: StudentName, time: time, EventTitle: EventTitle,
-            room: room, day: day);
+            room: room, day: day, difficulty: difficulty);
 
         // Use the selected parsing method
         ScheduleData = result;

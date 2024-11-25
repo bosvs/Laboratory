@@ -37,7 +37,7 @@ namespace WorkingWithXMLApplication.ParsingStrategy
                 case "Event":
                     currentEvent = new Event
                     {
-                        //Students = new List<Student>(),
+                        Difficulty = reader.GetAttribute("Difficulty"),
                         Day = reader.GetAttribute("Day"),
                         Title = reader.GetAttribute("Title"),
                         Room = reader.GetAttribute("Room"),

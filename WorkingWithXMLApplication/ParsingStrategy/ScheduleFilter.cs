@@ -50,10 +50,11 @@ namespace WorkingWithXMLApplication.ParsingStrategy
             string? time = null,
             string? EventTitle = null,
             string? room = null,
-            string? day = null)
+            string? day = null,
+            string? difficulty = null)
         {
             // Якщо критерії не задані, повертаємо початковий розклад
-            if (new[] { StudentName, time, EventTitle, room, day }.All(string.IsNullOrWhiteSpace))
+            if (new[] { StudentName, time, EventTitle, room, day, difficulty }.All(string.IsNullOrWhiteSpace))
             {
                 return schedule;
             }
@@ -63,7 +64,9 @@ namespace WorkingWithXMLApplication.ParsingStrategy
                 MatchesTime(time, Event.TimeInterval) &&
                 (string.IsNullOrWhiteSpace(EventTitle) || IsSimilarParts(EventTitle, Event.Title)) &&
                 (string.IsNullOrWhiteSpace(room) || IsSimilarParts(room, Event.Room)) &&
-                (string.IsNullOrWhiteSpace(day) || IsSimilarParts(day, Event.Day))
+                (string.IsNullOrWhiteSpace(day) || IsSimilarParts(day, Event.Day)) &&
+                (string.IsNullOrWhiteSpace(difficulty) || IsSimilarParts(difficulty, Event.Difficulty))
+
             ).ToList();
 
             return new Schedule { Events = filteredEvents };
