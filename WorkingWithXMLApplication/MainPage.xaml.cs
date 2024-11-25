@@ -77,8 +77,6 @@ namespace WorkingWithXMLApplication
         {
             FiltersMenuFirstBlock.IsVisible = isVisible;
             FiltersMenuSecondBlock.IsVisible = isVisible;
-            //ParsingTecnology.IsVisible = isVisible;
-            //ParsingOptions.IsVisible = isVisible;
             OpenScheduleButton.IsVisible = isVisible;
             HTMLTransorm.IsVisible = isVisible;
             // new update

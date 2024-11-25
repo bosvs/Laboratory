@@ -39,9 +39,6 @@ namespace WorkingWithXMLApplication{
         public string FullName { get; set; }
         public string Faculty { get; set; }
         public string Department { get; set; }
-
-        //public string Specialization { get; set; }
-        //Student
     }
 
     //public class Student
