@@ -3,35 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorkingWithXMLApplication.MainPage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#EAEAEA">
+             BackgroundColor="Transparent">
+
+    <!-- Add a gradient background -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#512BD4" Offset="0.0" />
+            <GradientStop Color="#4A90E2" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <ScrollView>
 
         <StackLayout Spacing="20" Padding="20">
 
-            <Button x:Name="InfoButton" Clicked="OnInfoButtonClicked" Text="Загальна інформація" 
-                    VerticalOptions="Start" HorizontalOptions="End" 
-                    BackgroundColor="#374785" TextColor="White" FontSize="18" CornerRadius="8"/>
+            <!-- Styled button -->
+            <Button x:Name="InfoButton" 
+                    Clicked="OnInfoButtonClicked" 
+                    Text="Загальна інформація" 
+                    VerticalOptions="Start" 
+                    HorizontalOptions="End" 
+                    BackgroundColor="White"
+                    TextColor="#512BD4"
+                    FontSize="16"
+                    CornerRadius="10"/>
 
-            <Label x:Name="TitleText" Text="Робота з XML файлами"
-                   FontAttributes="Bold" FontSize="28" TextColor="#374785"
-                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <!-- Modern label style -->
+            <Label x:Name="TitleText" 
+                   Text="Робота з XML файлами"
+                   FontAttributes="Bold"
+                   FontSize="32"
+                   TextColor="White"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" />
 
-            <Button x:Name="GettingFileButton" Text="Обрати XML файл"
-                    Clicked="OnOpenFileButtonClicked" HorizontalOptions="Center" VerticalOptions="Center" 
-                    BackgroundColor="#374785" TextColor="White" FontSize="18" CornerRadius="8" WidthRequest="200" />
+            <!-- Updated button style -->
+            <Button x:Name="GettingFileButton" 
+                    Text="Обрати XML файл" 
+                    Clicked="OnOpenFileButtonClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    BackgroundColor="#FF6F61"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    WidthRequest="220" />
 
             <Label x:Name="PathToFile" Text="Немає обраного файлу" 
                    HorizontalOptions="Center" VerticalOptions="Center" 
-                   TextColor="#6C757D" FontSize="16" Padding="10,0,10,0"/>
+                   TextColor="White" FontSize="16" Padding="10,0,10,0"/>
 
             <Label x:Name="ParsingTecnology" Text="Виберіть технологію для парсингу: "
-                   FontSize="18" HorizontalOptions="Center" IsVisible="False" Margin="0,20,0,0"/>
+                   FontSize="18" HorizontalOptions="Center" IsVisible="False" Margin="0,20,0,0" TextColor="White"/>
 
             <StackLayout x:Name="ParsingOptions" IsVisible="False" Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
-                <RadioButton x:Name="LINQRadioButton" GroupName="ParsingTech" Content="LINQ" Value="LINQ" IsChecked="True" CheckedChanged="OnParsingMethodChanged"/>
-                <RadioButton x:Name="SAXRadioButton" GroupName="ParsingTech" Content="SAX" Value="SAX" CheckedChanged="OnParsingMethodChanged"/>
-                <RadioButton x:Name="DOMRadioButton" GroupName="ParsingTech" Content="DOM" Value="DOM" CheckedChanged="OnParsingMethodChanged"/>
+                <RadioButton x:Name="LINQRadioButton" GroupName="ParsingTech" Content="LINQ" Value="LINQ" IsChecked="True" CheckedChanged="OnParsingMethodChanged" TextColor="White"/>
+                <RadioButton x:Name="SAXRadioButton" GroupName="ParsingTech" Content="SAX" Value="SAX" CheckedChanged="OnParsingMethodChanged" TextColor="White"/>
+                <RadioButton x:Name="DOMRadioButton" GroupName="ParsingTech" Content="DOM" Value="DOM" CheckedChanged="OnParsingMethodChanged" TextColor="White"/>
             </StackLayout>
 
             <Frame x:Name="FiltersMenu" IsVisible="False" BackgroundColor="White" CornerRadius="10" HasShadow="True">
@@ -70,22 +98,40 @@
 
                         <StackLayout Grid.Row="1" Grid.Column="2">
                             <Label Text=" " />
-                            <Button x:Name="ClearFilters" Text="Очистити фільтри" Clicked="OnClearFiltersButtonClicked" VerticalOptions="FillAndExpand" BackgroundColor="#FF5A5F" TextColor="White" CornerRadius="8"/>
+                            <Button x:Name="ClearFilters" 
+                                    Text="Очистити фільтри" 
+                                    Clicked="OnClearFiltersButtonClicked" 
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="#FF6F61" 
+                                    TextColor="White"
+                                    CornerRadius="8"/>
                         </StackLayout>
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
 
+            <!-- Buttons with modern style -->
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
-                <Button x:Name="OpenScheduleButton" Text="Відкрити розклад" 
-                        Clicked="OnOpenScheduleButtonClicked" HorizontalOptions="Center"
-                        BackgroundColor="#4CAF50" TextColor="White" FontSize="18"
-                        CornerRadius="8" WidthRequest="200" IsVisible="False" />
+                <Button x:Name="OpenScheduleButton"
+                        Text="Відкрити розклад" 
+                        Clicked="OnOpenScheduleButtonClicked"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#32CD32"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="10"
+                        WidthRequest="200"
+                        IsVisible="False" />
 
-                <Button x:Name="HTMLTransorm" Text="Трансформувати у HTML" 
-                        Clicked="OnHTMLTransformButtonClicked" HorizontalOptions="Center"
-                        BackgroundColor="#17A2B8" TextColor="White" FontSize="18"
-                        CornerRadius="8" IsVisible="False"/>
+                <Button x:Name="HTMLTransorm" 
+                        Text="Трансформувати у HTML" 
+                        Clicked="OnHTMLTransformButtonClicked"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#512BD4"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="10"
+                        IsVisible="False"/>
             </HorizontalStackLayout>
         </StackLayout>
     </ScrollView>
