@@ -32,22 +32,14 @@ namespace WorkingWithXMLApplication
 
         public async void OnInfoButtonClicked(object sender, EventArgs e)
         {
-            string studentInfo = "Роботу виконав Сікора Віктор, студент групи К - 26\n" +
-                                 "Програма забезпечує обробку XML-файлів (аналіз та трансформація) " +
-                                 "з використанням технологій LINQ, SAX та DOM.\nОбраний варіант - \"Розклад\"";
+            string Inf = "Розробив програму - Остапович Всеволод, студент групи К - 26\n" +
+                                 "Програма дозволяє обробляти XML файл за допомогою технологій:" +
+                                 " LINQ, SAX та DOM. За бажанням (в мене бажання це реалізовувати не було, але прийшлось) " +
+                                 "можна перетворити файл в HTML" +
+                                 ".\nОбраний варіант - \"Студентський парламент\" ";
+                                
 
-            string gptInfo = "Роботу виконав GPT-4o, студент групи К - 26\n" +
-                             "Програма забезпечує обробку XML-файлів (аналіз та трансформація) " +
-                             "з використанням технології GPT-4o.\nОбраний варіант - \"Розклад\"\n\n" +
-                             "P.S. Навіщо нам робити кнопку \"Загальна інформація\", " +
-                             "якщо це надто проста задача для GPT-4o )))";
-
-            bool result = await DisplayAlert("Інформація про програму", studentInfo, "Зрозуміло", "Давай чесно!");
-
-            if (!result)
-            {
-                await DisplayAlert("Інформація про програму", gptInfo, "Погодитись оцінити на 10 балів");
-            }
+            bool result = await DisplayAlert("Загальна інформація", Inf, "Ну такоє", "Це супер проєкт");
         }
 
         private async Task HandleFileSelectionAsync(string fileType, string pickerTitle, Action<string> onSuccess)
@@ -65,10 +57,10 @@ namespace WorkingWithXMLApplication
 
         public async void OnOpenFileButtonClicked(object sender, EventArgs e)
         {
-            await HandleFileSelectionAsync(".xml", "Оберіть XML файл", filePath =>
+            await HandleFileSelectionAsync(".xml", "Choose XML file", filePath =>
             {
                 _selectedFilePath = filePath;
-                PathToFile.Text = $"Відкрито {filePath}";
+                PathToFile.Text = $"Opened {filePath}";
                 ToggleUIElementsVisibility(true);
 
                 PopulatePicker(DayPicker, GetUniqueValues(filePath, "Event", "Day"));
