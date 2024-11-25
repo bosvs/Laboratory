@@ -83,7 +83,8 @@ namespace WorkingWithXMLApplication
 
         private void ToggleUIElementsVisibility(bool isVisible)
         {
-            FiltersMenu.IsVisible = isVisible;
+            FiltersMenuFirstBlock.IsVisible = isVisible;
+            FiltersMenuSecondBlock.IsVisible = isVisible;
             ParsingTecnology.IsVisible = isVisible;
             ParsingOptions.IsVisible = isVisible;
             OpenScheduleButton.IsVisible = isVisible;
