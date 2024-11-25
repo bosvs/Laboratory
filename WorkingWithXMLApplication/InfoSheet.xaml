@@ -2,17 +2,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorkingWithXMLApplication.InfoSheet"
              NavigationPage.HasNavigationBar="False"
-             Title="Розклад">
+             Title="Stud Parliament">
              
     <ScrollView Margin="5" Background="AliceBlue">
         <VerticalStackLayout Padding="10" Margin="10">
-            <CollectionView x:Name="ScheduleCollection" ItemsSource="{Binding Courses}" Margin="10">
+            <CollectionView x:Name="ScheduleCollection" ItemsSource="{Binding Events}" Margin="10">
                 <CollectionView.ItemTemplate Padding="10" Margin="5">
                     <DataTemplate>
                         <Frame BorderColor="Gray" WidthRequest="500">
                             <VerticalStackLayout  HorizontalOptions="Center">
                                 <HorizontalStackLayout Margin="0,5,0,0" Spacing="10">
-                                    <Label Text="День:" FontSize="16" FontAttributes="Bold" />
+                                    <Label Text="Date:" FontSize="16" FontAttributes="Bold" />
                                     <Label Text="{Binding Day}" FontSize="16" />
                                 </HorizontalStackLayout>
 
@@ -22,31 +22,19 @@
                                     <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center"/>
                                 </Frame>
                                 <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="100,auto">
-                                    <Label Text="Викладач: " FontSize="16" Grid.Row="0" Grid.Column="0"/>
-                                    <Label Text="{Binding Reprisentative.FullName}" FontSize="16" Grid.Row="0" Grid.Column="1"/>
-                                    <Label Text="Факультет: " Grid.Row="1" Grid.Column="0"/>
-                                    <Label Text="{Binding Reprisentative.Faculty}" Grid.Row="1" Grid.Column="1"/>
-                                    <Label Text="Кафедра: " Grid.Row="2" Grid.Column="0"/>
-                                    <Label Text="{Binding Reprisentative.Department}" Grid.Row="2" Grid.Column="1"/>
-                                    <Label Text="Аудиторія: " Grid.Row="3" Grid.Column="0" Margin="0,10,0,0"/>
+                                    <Label Text="Organizer: " FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="{Binding Student.FullName}" FontSize="16" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="Faculty: " Grid.Row="1" Grid.Column="0"/>
+                                    <Label Text="{Binding Student.Faculty}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Text="Department: " Grid.Row="2" Grid.Column="0"/>
+                                    <Label Text="{Binding Student.Department}" Grid.Row="2" Grid.Column="1"/>
+                                    <Label Text="Place: " Grid.Row="3" Grid.Column="0" Margin="0,10,0,0"/>
                                     <Label Text="{Binding Room}" Grid.Row="3" Grid.Column="1" Margin="0,10,0,0"/>
-                                    <Label Text="Час: " Grid.Row="4" Grid.Column="0"/>
+                                    <Label Text="Time: " Grid.Row="4" Grid.Column="0"/>
                                     <Label Text="{Binding ScheduleTime}" Grid.Row="4" Grid.Column="1"/>
                                 </Grid>
 
                                 <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,10,0,0" />
-
-                                <Label Text="Студенти:" FontAttributes="Bold" Margin="0,10,0,0" />
-                                <CollectionView ItemsSource="{Binding Students}">
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackLayout Orientation="Horizontal" Spacing="10">
-                                                <Label Text="{Binding FullName}" />
-                                                <Label Text="{Binding Group}" TextColor="Gray" />
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
                             </VerticalStackLayout>
                         </Frame>
                     </DataTemplate>

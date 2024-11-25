@@ -2,57 +2,54 @@
 <?xml-stylesheet type="text/xsl" href="schedule_transform.xsl"?>
 
 <Schedule>
-	<Event Title="Introduction to Algorithms" Room="1" Day="Monday" ScheduleTime="09:00 - 11:00">
+	<Event Title="Introduction to Algorithms" Room="1" Day="Monday" ScheduleTime="09:00 - 11:00" Difficulty="3">
 		<Student Faculty="Science" Department="Biology">
 			<FullName>John Doe</FullName>
 		</Student>
 	</Event>
-	<Event Title="Networking Fundamentals" Room="39" Day="Tuesday" ScheduleTime="10:00 - 12:00">
+	<Event Title="Networking Fundamentals" Room="39" Day="Tuesday" ScheduleTime="10:00 - 12:00" Difficulty="5">
 		<Student Faculty="Arts" Department="Literature">
 			<FullName>Jane Smith</FullName>
 		</Student>
 	</Event>
-	<Event Title="Artificial Intelligence Seminar" Room="43" Day="Wednesday" ScheduleTime="14:00 - 16:00">
+	<Event Title="Artificial Intelligence Seminar" Room="43" Day="Wednesday" ScheduleTime="14:00 - 16:00" Difficulty="8">
 		<Student Faculty="Engineering" Department="Mechanical Engineering">
 			<FullName>Alice Johnson</FullName>
 		</Student>
 	</Event>
-	<Event Title="Data Structures Workshop" Room="231" Day="Thursday" ScheduleTime="08:00 - 10:00">
+	<Event Title="Data Structures Workshop" Room="231" Day="Thursday" ScheduleTime="08:00 - 10:00" Difficulty="7">
 		<Student Faculty="Science" Department="Chemistry">
 			<FullName>Bob Brown</FullName>
 		</Student>
 	</Event>
-	<Event Title="Tech Networking Event" Room="308" Day="Friday" ScheduleTime="13:00 - 15:00">
+	<Event Title="Tech Networking Event" Room="308" Day="Friday" ScheduleTime="13:00 - 15:00" Difficulty="4">
 		<Student Faculty="Business" Department="Management">
 			<FullName>Carol White</FullName>
 		</Student>
 	</Event>
-	<Event Title="Cybersecurity Basics" Room="312" Day="Monday" ScheduleTime="11:00 - 13:00">
+	<Event Title="Cybersecurity Basics" Room="312" Day="Monday" ScheduleTime="11:00 - 13:00" Difficulty="6">
 		<Student Faculty="Law" Department="Criminal Law">
 			<FullName>David Green</FullName>
 		</Student>
 	</Event>
-	<Event Title="Mobile App Development" Room= "Chytalka" Day="Tuesday" ScheduleTime="15:00 - 17:00">
+	<Event Title="Mobile App Development" Room="Chytalka" Day="Tuesday" ScheduleTime="15:00 - 17:00" Difficulty="7">
 		<Student Faculty="Medicine" Department="Neuroscience">
 			<FullName>Emma Black</FullName>
 		</Student>
 	</Event>
-	<Event Title="Social Coding Meetup" Room="Chytalka" Day="Wednesday" ScheduleTime="10:00 - 12:00">
+	<Event Title="Social Coding Meetup" Room="Chytalka" Day="Wednesday" ScheduleTime="10:00 - 12:00" Difficulty="5">
 		<Student Faculty="Engineering" Department="Civil Engineering">
 			<FullName>Frank Blue</FullName>
 		</Student>
 	</Event>
-	<Event Title="Hackathon Preparation" Room="Lecture Hall" Day="Thursday" ScheduleTime="09:00 - 11:00">
+	<Event Title="Hackathon Preparation" Room="Lecture Hall" Day="Thursday" ScheduleTime="09:00 - 11:00" Difficulty="9">
 		<Student Faculty="Arts" Department="Music">
 			<FullName>Grace Pink</FullName>
 		</Student>
 	</Event>
-	<Event Title="Computer Vision Lecture" Room="Ecohub" Day="Friday" ScheduleTime="14:00 - 16:00">
+	<Event Title="Computer Vision Lecture" Room="Ecohub" Day="Friday" ScheduleTime="14:00 - 16:00" Difficulty="8">
 		<Student Faculty="Science" Department="Physics">
 			<FullName>Hannah Orange</FullName>
 		</Student>
 	</Event>
 </Schedule>
-
-
-

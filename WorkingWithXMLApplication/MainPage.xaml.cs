@@ -34,7 +34,7 @@ namespace WorkingWithXMLApplication
         {
             string Inf = "Розробив програму - Остапович Всеволод, студент групи К - 26\n" +
                                  "Програма дозволяє обробляти XML файл за допомогою технологій:" +
-                                 " LINQ, SAX та DOM. За бажанням (в мене бажання це реалізовувати не було, але прийшлось) " +
+                                 " LINQ, SAX та DOM.\nЗа бажанням (в мене бажання це реалізовувати не було, але прийшлось) " +
                                  "можна перетворити файл в HTML" +
                                  ".\nОбраний варіант - \"Студентський парламент\" ";
                                 
@@ -106,7 +106,7 @@ namespace WorkingWithXMLApplication
         {
             if (_selectedFilePath == null)
             {
-                await DisplayAlert("Помилка", "Файл не вибрано", "ОК");
+                await DisplayAlert("Error", "File not chosen", "ОК");
                 return;
             }
             _selectedParsingMethod = await DisplayActionSheet("Select Parsing Technology", "Cancel", null, "LINQ", "SAX", "DOM");
@@ -119,7 +119,7 @@ namespace WorkingWithXMLApplication
                 "LINQ" => new LINQParsingStrategy(),
                 "SAX" => new SAXParsingStrategy(),
                 "DOM" => new DOMParsingStrategy(),
-                _ => throw new InvalidOperationException("Невідома стратегія парсингу")
+                _ => throw new InvalidOperationException("Unkwnown parsing strategy")
             };
 
             var newResult = new InfoSheet(
