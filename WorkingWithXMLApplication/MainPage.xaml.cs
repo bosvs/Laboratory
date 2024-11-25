@@ -77,8 +77,8 @@ namespace WorkingWithXMLApplication
         {
             FiltersMenuFirstBlock.IsVisible = isVisible;
             FiltersMenuSecondBlock.IsVisible = isVisible;
-            ParsingTecnology.IsVisible = isVisible;
-            ParsingOptions.IsVisible = isVisible;
+            //ParsingTecnology.IsVisible = isVisible;
+            //ParsingOptions.IsVisible = isVisible;
             OpenScheduleButton.IsVisible = isVisible;
             HTMLTransorm.IsVisible = isVisible;
             // new update
@@ -102,12 +102,7 @@ namespace WorkingWithXMLApplication
             RoomPicker.SelectedIndex = -1;
         }
 
-        private void OnParsingMethodChanged(object sender, CheckedChangedEventArgs e)
-        {
-            _selectedParsingMethod = LINQRadioButton.IsChecked ? "LINQ" :
-                                      SAXRadioButton.IsChecked ? "SAX" :
-                                      DOMRadioButton.IsChecked ? "DOM" : _selectedParsingMethod;
-        }
+        
 
         private async void OnOpenScheduleButtonClicked(object sender, EventArgs e)
         {
@@ -116,6 +111,10 @@ namespace WorkingWithXMLApplication
                 await DisplayAlert("Помилка", "Файл не вибрано", "ОК");
                 return;
             }
+            _selectedParsingMethod = await DisplayActionSheet("Select Parsing Technology", "Cancel", null, "LINQ", "SAX", "DOM");
+
+            if (_selectedParsingMethod == "Cancel")
+                return;
 
             IParsingStrategy selectedParsingStrategy = _selectedParsingMethod switch
             {
