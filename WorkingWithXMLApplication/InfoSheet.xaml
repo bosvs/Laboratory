@@ -3,8 +3,17 @@
              x:Class="WorkingWithXMLApplication.InfoSheet"
              NavigationPage.HasNavigationBar="False"
              Title="Stud Parliament">
-             
-    <ScrollView Margin="5" Background="AliceBlue">
+
+    <!-- Add a gradient background -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#512BD4" Offset="0.0" />
+            <GradientStop Color="#4A90E2" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+    <ScrollView>
         <VerticalStackLayout Padding="10" Margin="10">
             <CollectionView x:Name="ScheduleCollection" ItemsSource="{Binding Events}" Margin="10">
                 <CollectionView.ItemTemplate Padding="10" Margin="5">
