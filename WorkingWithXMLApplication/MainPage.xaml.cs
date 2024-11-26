@@ -157,11 +157,11 @@ namespace WorkingWithXMLApplication
                     var saveResult = await FileSaver.Default.SaveAsync("TransformedResult.html", stream);
                     saveResult.EnsureSuccess();
 
-                    await Toast.Make("HTML file wasn't saved!").Show();
+                    await Toast.Make("HTML file was saved!").Show();
                 }
                 catch (Exception ex)
                 {
-                    await Toast.Make($"Файл не збережено!\n{ex.Message}").Show();
+                    await Toast.Make($"File wasn't saved!\n{ex.Message}").Show();
                 }
             });
         }

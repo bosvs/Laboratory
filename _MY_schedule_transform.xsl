@@ -19,51 +19,21 @@
 						<th>Course Title</th>
 						<th>Room</th>
 						<th>Schedule Time</th>
-						<th>Instructor</th>
+						<th>Student</th>
 						<th>Faculty</th>
 						<th>Department</th>
 						<th>Student Name</th>
 						<th>Group</th>
 					</tr>
-					<xsl:for-each select="Course">
+					<xsl:for-each select="Event">
 						<xsl:variable name="day" select="@Day"/>
 						<xsl:variable name="title" select="@Title"/>
 						<xsl:variable name="room" select="@Room"/>
 						<xsl:variable name="scheduleTime" select="@ScheduleTime"/>
-						<xsl:variable name="instructorName" select="Instructor/FullName"/>
-						<xsl:variable name="faculty" select="Instructor/@Faculty"/>
-						<xsl:variable name="department" select="Instructor/@Department"/>
-						<xsl:for-each select="Students/Student">
-							<tr>
-								<td>
-									<xsl:value-of select="$day"/>
-								</td>
-								<td>
-									<xsl:value-of select="$title"/>
-								</td>
-								<td>
-									<xsl:value-of select="$room"/>
-								</td>
-								<td>
-									<xsl:value-of select="$scheduleTime"/>
-								</td>
-								<td>
-									<xsl:value-of select="$instructorName"/>
-								</td>
-								<td>
-									<xsl:value-of select="$faculty"/>
-								</td>
-								<td>
-									<xsl:value-of select="$department"/>
-								</td>
-								<td>
-									<xsl:value-of select="FullName"/>
-								</td>
-								<td>
-									<xsl:value-of select="@Group"/>
-								</td>
-							</tr>
-						</xsl:for-each>
+						<xsl:variable name="StudentName" select="Student/FullName"/>
+						<xsl:variable name="faculty" select="Student/@Faculty"/>
+						<xsl:variable name="department" select="Student/@Department"/>
+						
 					</xsl:for-each>
 				</table>
 			</body>
