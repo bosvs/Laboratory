@@ -65,7 +65,7 @@
                            HorizontalOptions="Center"/>
                     </Frame>
 
-                    <Grid RowSpacing="10" ColumnSpacing="15" RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                    <Grid RowSpacing="10" ColumnSpacing="15" RowDefinitions="*,*" ColumnDefinitions="*,*">
                         <StackLayout Grid.Row="0" Grid.Column="0">
                             <Label Text="Event Title" FontSize="18" TextColor="#374785"/>
                             <Entry x:Name="EventNameFilter" Placeholder="Enter event name" BackgroundColor="White" VerticalOptions="FillAndExpand" FontSize="16" TextColor="#374785"/>
@@ -75,10 +75,12 @@
                             <Label Text="Organizer" FontSize="18" TextColor="#374785"/>
                             <Entry x:Name="StudentNameFilter" Placeholder="Enter name or surname" BackgroundColor="White" VerticalOptions="FillAndExpand" FontSize="16" TextColor="#374785"/>
                         </StackLayout>
+                        <!--
                         <StackLayout Grid.Row="0" Grid.Column="2">
                             <Label Text="Difficulty" FontSize="18" TextColor="#374785"/>
                             <Picker x:Name="DifficultyPicker" BackgroundColor="White" VerticalOptions="FillAndExpand" TextColor="#374785"/>
                         </StackLayout>
+                            -->
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
