@@ -62,12 +62,7 @@ namespace WorkingWithXMLApplication.ParsingStrategy
                         currentStudent.FullName = fullName;
                     break;
 
-                //case "Student":
-                //    currentStudent = new Student
-                //    {
-                //        Group = reader.GetAttribute("Group")
-                //    };
-                //    break;
+   
             }
         }
 
@@ -80,16 +75,6 @@ namespace WorkingWithXMLApplication.ParsingStrategy
                         currentEvent.Student = currentStudent;
                     currentStudent = null;
                     break;
-
-                //case "Student":
-                //    if (currentStudent != null &&
-                //        !string.IsNullOrWhiteSpace(currentStudent.FullName) &&
-                //        !string.IsNullOrWhiteSpace(currentStudent.Group))
-                //    {
-                //        currentEvent?.Students.Add(currentStudent);
-                //    }
-                //    currentStudent = null;
-                //    break;
 
                 case "Event":
                     if (currentEvent != null)

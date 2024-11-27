@@ -65,29 +65,5 @@ namespace WorkingWithXMLApplication.ParsingStrategy
 
             return Student;
         }
-
-        /*rivate static void ParseStudentsNode(XmlNode studentsNode, List<Student> students)
-        {
-            foreach (XmlNode studentNode in studentsNode.ChildNodes)
-            {
-                if (studentNode.Name != "Student" || studentNode.Attributes == null) continue;
-
-                var student = new Student
-                {
-                    Group = studentNode.Attributes["Group"]?.Value.Trim()
-                };
-
-                foreach (XmlNode detailNode in studentNode.ChildNodes)
-                {
-                    if (detailNode.Name == "FullName")
-                        student.FullName = detailNode.InnerText.Trim();
-                }
-
-                if (!string.IsNullOrWhiteSpace(student.FullName) && !string.IsNullOrWhiteSpace(student.Group))
-                {
-                    students.Add(student);
-                }
-            }
-        }*/
     }
 }

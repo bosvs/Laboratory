@@ -23,11 +23,7 @@ namespace WorkingWithXMLApplication.ParsingStrategy
                         Faculty = (string)EventElement.Element("Student")?.Attribute("Faculty"),
                         Department = (string)EventElement.Element("Student")?.Attribute("Department")
                     },
-                    //Students = EventElement.Descendants("Student").Select(s => new Student
-                    //{
-                    //    FullName = (string)s.Element("FullName"),
-                    //    Group = (string)s.Attribute("Group")
-                    //}).ToList()
+                    
                 };
                 schedule.Events.Add(Event);
             }
